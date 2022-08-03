@@ -17,11 +17,11 @@ function getSeason(date) {
     return 'Unable to determine the time of year!';
   }
 
-console.log(date)
-console.log(Date.prototype.isPrototypeOf(date) );
+  console.log(date)
+  console.log(Date.prototype.isPrototypeOf(date));
 
 
-if(!Date.prototype.isPrototypeOf(date) || typeof date.getMonth !== 'function'){
+  if (!Date.prototype.isPrototypeOf(date) || typeof date.getMonth !== 'function') {
     console.log('error: Invalid date!');
     throw new Error('Invalid date!');
   }
