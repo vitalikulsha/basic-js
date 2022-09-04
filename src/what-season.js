@@ -16,17 +16,10 @@ function getSeason(date) {
   if (!arguments[0]) {
     return 'Unable to determine the time of year!';
   }
-
-  console.log(date)
-  console.log(Date.prototype.isPrototypeOf(date));
-
-
   if (!Date.prototype.isPrototypeOf(date) || typeof date.getMonth !== 'function') {
-    console.log('error: Invalid date!');
     throw new Error('Invalid date!');
-  }
-  /*
-  if(isNaN(Date.parse(date))){
+  }  
+  /*if(isNaN(Date.parse(date))){
     console.log('error')
     throw new Error('Invalid date!');
   }*/
