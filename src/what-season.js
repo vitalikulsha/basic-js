@@ -17,15 +17,11 @@ function getSeason(date) {
   if (!arguments[0]) {
     return 'Unable to determine the time of year!';
   }
-  if (Object.prototype.toString.call(date) === "[object Date]") {
-    try {
-      date.valueOf();
-      return seasons[date.getMonth()];
-    } catch (err) {
-      console.log('error');
-      throw new Error('Invalid date!');
-    }
-  } else {
+  try {
+    date.valueOf();
+    return seasons[date.getMonth()];
+  } catch (err) {
+    console.log('error');
     throw new Error('Invalid date!');
   }
 }
