@@ -61,9 +61,6 @@ class VigenereCipheringMachine {
     if(arguments[0] === undefined || arguments[1] === undefined ){
       throw new Error('Incorrect arguments!');
     }
-    if(this.isReverse){
-      str = str.split('').reverse().join('');
-    }
     const fullKey = key.padEnd(str.length, key).toUpperCase();
     let decryptArr = [];
     let count = 0;
@@ -77,6 +74,9 @@ class VigenereCipheringMachine {
         count++;
       }
     }    
+    if(this.isReverse){
+      decryptArr = decryptArr.reverse();
+    }
     return decryptArr.join('');
   }
   
